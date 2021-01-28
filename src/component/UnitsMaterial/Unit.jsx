@@ -222,7 +222,21 @@ export default class Unit extends React.Component {
 
 
      }
-
+     handleTempreture(TEMPRETURETYPES ,TEMPRETUREFROM, TEMPRETURETO) {
+        TempretureAction.CelciusToCelcius( TEMPRETURETYPES ,TEMPRETUREFROM, TEMPRETURETO);
+        TempretureAction.CelciusToFahrenheit( TEMPRETURETYPES ,TEMPRETUREFROM, TEMPRETURETO);
+        TempretureAction.CelciusToKelvin( TEMPRETURETYPES ,TEMPRETUREFROM, TEMPRETURETO);
+  
+        TempretureAction.FahrenheitToCelcius( TEMPRETURETYPES ,TEMPRETUREFROM, TEMPRETURETO);
+        TempretureAction.FahrenheitToFahrenheit( TEMPRETURETYPES ,TEMPRETUREFROM, TEMPRETURETO);
+        TempretureAction.FahrenheitToKelvin( TEMPRETURETYPES ,TEMPRETUREFROM, TEMPRETURETO);
+  
+        TempretureAction.KelvinToCelcius( TEMPRETURETYPES ,TEMPRETUREFROM, TEMPRETURETO);
+        TempretureAction.KelvinToFahrenheit( TEMPRETURETYPES ,TEMPRETUREFROM, TEMPRETURETO);
+        TempretureAction.KelvinToKelvin( TEMPRETURETYPES ,TEMPRETUREFROM, TEMPRETURETO);
+       }
+  
+     
      
     
 
