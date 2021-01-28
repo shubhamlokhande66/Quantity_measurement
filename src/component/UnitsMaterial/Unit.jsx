@@ -237,7 +237,19 @@ export default class Unit extends React.Component {
        }
   
      
-     
+       handleVolume(VOLUMETYPES ,VOLUMEFROM, VOLUMETO) {
+        VolumeAction.LitresToLitres( VOLUMETYPES ,VOLUMEFROM, VOLUMETO);
+        VolumeAction.LitresToMililiters( VOLUMETYPES ,VOLUMEFROM, VOLUMETO);
+        VolumeAction.LitresToGallons( VOLUMETYPES ,VOLUMEFROM, VOLUMETO);
+  
+        VolumeAction.MililitersToLitres( VOLUMETYPES ,VOLUMEFROM, VOLUMETO);
+        VolumeAction.MililitersToMililiters( VOLUMETYPES ,VOLUMEFROM, VOLUMETO);
+        VolumeAction.MililitersToGallons( VOLUMETYPES ,VOLUMEFROM, VOLUMETO);
+  
+        VolumeAction.GallonsToLitres( VOLUMETYPES ,VOLUMEFROM, VOLUMETO);
+        VolumeAction.GallonsToMililiters( VOLUMETYPES ,VOLUMEFROM, VOLUMETO);
+        VolumeAction.GallonsToGallons( VOLUMETYPES ,VOLUMEFROM, VOLUMETO);
+       }
     
 
 render(){
