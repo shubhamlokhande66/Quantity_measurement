@@ -1,0 +1,190 @@
+.homeContainer{
+    display: flex;
+    padding-top: 90px;
+    /* height: 100vh; */
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(240, 239, 239);
+    margin-top: 30px;
+    min-height: 39.5em;
+    
+
+}
+#quanment{
+    font-size: 20px;
+    margin-left: 158px;
+    margin-top: 14px;
+    font-weight: bold;
+
+}
+#history{
+    font-size: 13px;
+    font-weight: 600;
+    margin-top: 11px;
+}
+.header{
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    justify-content: space-between;
+    width: 90%;
+}
+
+#appBar{
+height:75px;
+width: 100%;
+background-color: rgb(46, 46, 238);
+color: white;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+.cardContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 40px;
+    width: 60%;
+    /* height: 400px; */
+    justify-content: space-between;
+    margin-top: -10em;
+}
+#length{
+    width: 150px;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #EDFDF9 0% 0% no-repeat padding-box;
+    box-shadow: 0px 3px 6px #00000029;
+    border: 1px solid #0EC098;
+    border-radius: 7px;
+    opacity: 1;
+    font: normal normal bold 15px/19px Montserrat;
+    letter-spacing: 0px;
+    color: #0EC098;
+    text-transform: capitalize;
+    opacity: 1;
+}
+#length:hover{
+    width: 150px;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #EDFDF9 0% 0% no-repeat padding-box;
+    box-shadow: 0px 3px 6px #00000029;
+    border: 1px solid #0EC098;
+    border-radius: 7px;
+    opacity: 1;
+    font: normal normal bold 15px/19px Montserrat;
+    letter-spacing: 0px;
+    color: #0EC098;
+    text-transform: capitalize;
+    
+    opacity: 1;
+}
+#temperatures{
+width: 155px;
+height: 150px;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+filter:grayscale(100%);
+}
+#temperatures:hover{
+    width: 150px;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid #b62c2c;
+    filter:  grayscale(0%);
+    }
+#volumes{
+width: 155px;
+height: 150px;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+filter:grayscale(100%);
+}
+#volumes:hover{
+    width: 150px;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid #683fb4;
+    filter:  grayscale(0%);
+    }
+#containerForData{
+    display: flex;
+    width: 40%;
+    justify-content:space-around;  
+    flex-direction: row;
+    justify-items:center;
+    align-items: center; 
+    margin-left: -1px;
+    margin-top: -29px;
+ }
+ #chooseType{
+     display: flex;
+     text-align: left;
+     color: black;
+     width:35%;
+     size: 15px;
+     justify-content:column;
+     align-items: flex-start;
+     font: normal normal medium 15px/19px Montserrat;
+     margin-top: 54px;
+}
+#Select {
+    top: 480px;
+    left: 385px;
+    width: 205px;
+    height: 47px;
+    
+    
+    border-radius: 3px;
+    opacity: 1;
+    padding-left: 10px;
+  }
+  #text{
+    flex-direction: column;
+    align-self: flex-start;
+    margin: 0;
+    text-align: left;
+    font: normal normal medium 12px/15px Montserrat;
+    letter-spacing: 0px;
+    color: #000000;
+    text-transform: uppercase;
+    opacity: 0.62;
+    margin-left: 7px;
+}
+.TextField{
+    margin-top: 10px;
+    margin-bottom: 0;
+    width: 15em;
+    background-color: white;
+}
+
+@media only screen and (max-width: 768px) {
+    .homeContainer{
+        width: 100em;
+        height: 200em;
+        margin-top: 2em;
+    }
+    .cardContainer{
+        margin-top: 10em;
+     width: 20em;
+        height: 50em;
+
+    }
+}

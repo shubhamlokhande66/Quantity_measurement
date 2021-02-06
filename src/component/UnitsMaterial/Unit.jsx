@@ -128,10 +128,10 @@ render(){
                         <lable>CHOOSE TYPE</lable>
                     </div> 
                     <div className="converterCard">
-                        <Card className="length" handleClick={this.handleLength}>
+                        <Card className="length" onChange={this.handleLength}>
                         <div  >
                     
-                            <img src={Scale}/>
+                            <img src={Scale} />
                         </div>
                      
                         <div>

@@ -1,19 +1,4 @@
-.parentToolbar{
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    width: 100%;
-}
 
-.toolbarParent{
-    display: flex;
-    justify-content: space-between;
-    padding: 15px;
-    width: 100%;
-    height: 50px;
-    border: 1px solid;
-    align-items: center;
-}
 
 .welcomeNote{
     display: flex;
@@ -21,6 +6,5 @@
     align-items: center;
     height: 80px;
     width: 100%;
-    border: solid;
     background-color: #446DFF;
 }

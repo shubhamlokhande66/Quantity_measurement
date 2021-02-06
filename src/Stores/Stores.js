@@ -1,74 +1,174 @@
+import EventEmitter from 'events';
+import  Dispatcher from "../Dispatcher/Dispatcher"
 
-import AppDispatcher from "../Dispatcher/Dispatcher";
-import Constants from "../Constant/Constant";
-let EventEmitter = require('events').EventEmitter;
-// import EventEmitter from ('events').EventEmitter;
-let merge = require('merge');
 
-// Internal object of shoes
-let _length = {};
-let _Volume = {};
-let _Tempreture = {};
-// Method to load shoes from action data
-function ConveterData(data) {
-  _length = data.length;
-  _Volume = data.Volume;
-  _Tempreture = data.Tempreture;
+class Store extends EventEmitter  { 
+
+  constructor(){ 
+    super();
+
+    
+    this.TempFrom=[];
+    this.TempData=[];
+    this.TempTo=[]
+    // this.data={ 
+    //   setFromTemperature: '',
+    //   setToTemperature: '',
+    //  setFromTemperatureText:'',
+     
+    
+    //  result: ""
+    // }
+
+
+    
+  }
   
-}
 
-// Merge our store with Node's Event Emitter
-export default function Store() {
-let Store = merge(EventEmitter.prototype, {
+    getAllData() {
+    return this.TempData
 
-  // Returns all shoes
-    getlength: function() {
-    return _length;
-  },
-    getVolume: function() {
-    return _Volume;
-    },
-    getTempreture: function() {
-    return _Tempreture;
+    
+  } 
+  getAllFrom() {
+    return this.TempFrom
+    
+  } 
+  getAllTo() {
+    return this.TempTo
+    
+  } 
 
-  },
+  // updateData(obj) {
+  //   this.data = obj;
 
-  emitChange: function() {
-    this.emit('change');
-  },
+  //   console.log(obj);
 
-  addChangeListener: function(callback) {
-    this.on('change', callback);
-  },
+  //   this.emit("change");
+  // }
 
-  removeChangeListener: function(callback) {
-    this.removeListener('change', callback);
-  }
+ 
+//   handleActions = action => { 
+//     console.log(action);
 
-});
-
-// Register dispatcher callback
-AppDispatcher.register(function(payload) {
-  let action = payload.action;
-  let type,from,to;
-  // Define what to do for certain actions
-  switch(action.actionType) {
-    case Constants.LENGTH:
-      case Constants.VOLUME:
-        case Constants.TEMPRATURE:
+//     switch (action.type) { 
+//       case "ADD_TEMP":
+//         this.updateData({
+//           // ...this.data,
+//           setFromTemperatureText: action.amt,
+        
+//         });
+//         break;
+//         case "ADD_From_TEMP_TYPE":
+//         this.updateData({
+//           // ...this.data,
+//           setFromTemperature: action.fromType,
+        
+//         });
+//         break;
       
-      // Call internal method based upon dispatched action
-      ConveterData(action.data);
-      break;
+//         case "ADD_To_TEMP_TYPE":
+//             this.updateData({
+//               // ...this.data,
+//               setToTemperature: action.toType,
+            
+//             });
+//             break;
+//   };
+// }
 
-    default:
-      return true;
+
+UpdateTemp(amt) {
+  this.TempData.push(amt);
+  console.log(amt)
+  this.change();
+}
+
+UpdateFromTempType(fromType) {
+  this.TempFrom.push(fromType);
+  console.log(fromType)
+  this.change();
+}
+
+UpdateToTempType(toType) {
+  this.TempData.push(toType);
+  console.log(toType)
+  this.change();
+}
+
+change() {
+  this.emit('TempTo');
+  this.emit('TempFrom');
+  this.emit('TempTo');
+  
+
+}
+addListener(TempTo, callback) {
+  this.on(TempTo, callback);
+}
+
+removeListener(TempTo, callback) {
+  this.removeListener(TempTo, callback);
+}
+
+
+
+
+
+  quantityConversion(input, options) {
+    console.log("input", input);
+    console.log("options", options);
+    switch (options) {
+    
+      case "FahrenheitFahrenheit":
+        return input;
+
+      case "FahrenheitCelsius":
+        return ((input - 32) * 5) / 9;
+
+      case "FahrenheitKelvin":
+        return ((input - 32) * 5) / 9 + 273.15;
+
+      case "CelsiusCelsius":
+        return input;
+
+      case "CelsiusFahrenheit":
+        return (input * 9) / 5 + 32;
+
+      case "CelsiusKelvin":
+        return input + 273.15;
+
+      case "KelvinKelvin":
+        return input;
+
+      case "KelvinFahrenheit":
+        return ((input - 273) * 9) / 5 + 32;
+
+      case "KelvinCelcius":
+        return input - 273;
+
+  
+    }
   }
 
-  // If action was acted upon, emit change event
-  Store.emitChange();
 
-  return true;
 
-});
+//   Change() {
+//     this.emit('change');
+//   }
+
+//   addChangeListener(callback) {
+//     this.on('change', callback);
+//   }
+
+//   removeChangeListener(callback) {
+//     this.removeListener('change', callback);
+//   }
 }
+
+// const fluxStore = new Store();
+// Dispatcher.register(fluxStore.handleActions.bind(fluxStore));
+// window.fluxStore = fluxStore;
+// window.Dispatcher = Dispatcher;
+
+export default new Store(); 

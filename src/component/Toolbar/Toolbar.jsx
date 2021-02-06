@@ -1,13 +1,15 @@
-import React from "react";
-import "./Toolbar.css";
+// import React from "react";
+// import "./Toolbar.css";
 
 
-export default function Toolbar() {
-  return (
+// export default function Toolbar() {
+//   return (
     
-      <div className='welcomeNote'>
-           <h3 style={{color: 'white'}} > Welcome To Quantity Measurement</h3>
-      </div>
+//       <div className='welcomeNote'>
+//          <div className='Welcome'>
+//            <h2 style={{color: 'white', width:'500px'}} > Welcome To Quantity Measurement</h2>
+//            </div>
+//       </div>
     
-  );
-}
+//   );
+// }
